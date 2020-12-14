@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+  <img src="assets/img/dg.png" class="logo"> <!--Places the DG Asian Food Company Logo at the top of page. Sized and centered using logo tag in CSS-->
+  <ion-title>Shopping List</ion-title> <!--Page Title-->
+</ion-toolbar>
+</ion-header>
+<!--Places the DG Asian Food Company Logo at the top of page. Sized and centered using logo tag in CSS-->
+<ion-buttons slot="start">
+<ion-back-button color="danger" text= "Home" defaultHref="/home"></ion-back-button> <!--Back button takes user back to home page when clicked -->
+</ion-buttons>
+
+<ion-button color="primary" fill="clear" class="icon" size="large" (click)="navigateToAddShopping();">
+  <ion-icon name="add-circle-outline"></ion-icon>
+</ion-button>
+
+<!-- Button passes user to add shopping page where they can add items to shopping list. Written to Firebase real time database -->
+    
+<ion-content> <!--Start of content tag-->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title *ngFor="let item of shoppingListRef$ | async" (click)=selectShoppingItem(item)> <!--ngFor directive subscribes to shopping list item-->
+        <ion-card-content>Name: {{item.itemName}}<br> <!--passes item name to shopping list page-->
+        Amount: {{item.itemNumber}} <!--passes item amount to shopping list page-->
+        </ion-card-content>
+      </ion-card-title>
+    </ion-card-header>
+</ion-card>
+
+       
+</ion-content> <!--End of content tag-->
+
+

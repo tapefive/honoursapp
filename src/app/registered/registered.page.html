@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+  <img src="assets/img/dg.png" class="logo">
+  <ion-title>My Account</ion-title>
+</ion-toolbar>
+</ion-header> <!--Places the DG Asian Food Company Logo at the top of page. Sized and centered using logo tag in CSS-->
+
+<ion-content padding> <!--Starts content tag with padding-->
+ 
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        Username : {{userEmail}} <!--Passes current user email on screen as username-->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="buttons"> <!--Declared buttons div tag for CSS-->
+  <p><ion-button size ="small" color="light" shape="round" routerLink="/home">Home</ion-button></p> <!--Home button passes user back to home page-->
+
+  <p><ion-button size ="small" color="danger" shape="round" fill="outline" (click)="logout();">Sign Out</ion-button></p>
+  </div>
+
+  <!--Sign Out button signs current user out of application and passes user back to home page. Initialises logout method from register.page.ts -->
+  
+  
+  
+</ion-content>

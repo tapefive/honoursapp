@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+      <img src="assets/img/dg.png" class="logo"> <!--Places the DG Asian Food Company Logo at the top of page. Sized and centered using logo tag in CSS-->
+      <ion-title>Checkout</ion-title> <!--Page Title-->
+  </ion-toolbar>
+</ion-header>
+<ion-buttons slot="start">
+  <ion-back-button color="danger" defaultHref="/products"></ion-back-button> <!--Red back button takes user back to products when clicked -->
+</ion-buttons>
+
+<ion-content> <!--Starts content tag-->
+
+  <ion-list>
+      <ion-item *ngFor="let item of selectedProducts" lines="inset"> <!--ngFor directive subscribes to selected products as item in cart-->
+          {{ item.count }} x {{ item.name }} - {{ item.price | currency: 'GBP' : 'symbol' }} <!--passes amount (count) of products added to cart calculated in the CheckoutPage.ts file, -->
+                                                                                              <!--product name and product price in £ currency-->
+          <ion-label slot="end" text-right>{{ (item.price * item.count) | currency: 'GBP' : 'symbol' }}</ion-label> <!--passes product price multiplied by count. Uses the £ currency pipe-->
+      </ion-item>
+      <ion-item>
+          Order Total: <span slot="end">{{ total | currency: 'GBP' : 'symbol' }}</span> <!--passes cart total in £ currency to the checkout page-->
+      </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="refreshPage();"> <!--Pay Now button refreshPage method initilaised on click-->
+    Pay Now
+  </ion-button>
+
+</ion-content> <!--Ends content tag-->

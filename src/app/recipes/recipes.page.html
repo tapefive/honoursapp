@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+  <img src="assets/img/dg.png" class="logo">
+  <ion-title>Recipes</ion-title> <!--Page title-->
+</ion-toolbar>
+</ion-header> <!--Places the DG Asian Food Company Logo at the top of page. Sized and centered using logo tag in CSS-->
+<ion-buttons slot="start">
+<ion-back-button color="danger" text= "Home" defaultHref="/home"></ion-back-button> <!--Back button passes user back to Home page-->
+</ion-buttons>
+
+<ion-content> <!--Start of content tag-->
+
+    <ion-card>
+        <ion-card-content>
+            <ion-row>
+              <ion-col col-4></ion-col>
+              <ion-col col-4>
+                <ion-button size ="small" color="light" shape="round" routerLink="/redthai" routerDirection="root">Red Thai Chicken Curry</ion-button>
+              </ion-col>
+              <ion-col col-4></ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card> <!--Card on Recipes page with button which directs to Red Thai Chicken Curry recipe when clicked by user -->
+
+        <ion-card>
+          <ion-card-content>
+              <ion-row>
+                <ion-col col-4></ion-col>
+                <ion-col col-4>
+                  <ion-button size ="small" color="light" shape="round" routerLink="/spchix" routerDirection="root">Salt & Pepper Chicken</ion-button>
+                </ion-col>
+                <ion-col col-4></ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card> <!--Card on Recipes page with button which directs to Salt & Pepper Chicken recipe when clicked by user -->
+
+          <ion-card>
+            <ion-card-content>
+                <ion-row>
+                  <ion-col col-4></ion-col>
+                  <ion-col col-4>
+                    <ion-button size ="small" color="light" shape="round" routerLink="/dumplings" routerDirection="root">Pork & Chive Dumplings</ion-button>
+                  </ion-col>
+                  <ion-col col-4></ion-col>
+                </ion-row>
+              </ion-card-content>
+            </ion-card> <!--Card on Recipes page with button which directs to Pork and Chive Dumplings recipe when clicked by user -->
+
+</ion-content> <!--End of content tag-->

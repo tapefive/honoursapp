@@ -1,0 +1,286 @@
+<ion-header>
+    <ion-toolbar>
+    <img src="assets/img/dg.png" class="logo"> <!--Places the DG Asian Food Company Logo at the top of page. Sized and centered using logo tag in CSS-->
+    <ion-title>Products</ion-title> <!--Page Title-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-buttons slot="start">
+  <ion-back-button color="danger" text= "Home" defaultHref="/home"></ion-back-button>
+</ion-buttons> <!--Red back button takes user back to home when clicked -->
+
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button *ngIf="cart.length > 0" (click)="openCart()"><!--openCart method declared-->
+      <ion-badge>{{ cart.length }}</ion-badge>
+      <ion-icon name="cart" size="large"></ion-icon>
+  </ion-fab-button>
+</ion-fab> <!--Cart icon and button placed in top left of screen. Number of items in cart only displayed if cart total is greater than 1-->
+            <!-- When cart icon clicked, user passed to cart model-->
+
+
+
+<ion-content>
+<!--ngContainer opened for first product card-->
+  <ng-container *ngFor="let p of products | async"> <!--ngFor directive and async pipe subscribes to products observable-->
+      <ion-card *ngIf="p.id == 1"> <!--ngIf directive card only displays product information when relevant product id is declared-->
+          <ion-card-header>
+              <img src="assets/img/wrappers.jpg" class="image"> <!--image path sets different product image for each product id-->
+              <ion-card-title>{{p.name}}</ion-card-title> <!--passes product name to the cart title from Firestore-->
+              <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle><!--passes product price to the cart subtitle from Firestore-->
+              <ion-button fill="clear" (click)="addToCart(p)"><!--addToCart method initialised on click and product with id 1 added to cart-->
+                  <ion-icon name="add"></ion-icon> <!--displays add icon-->
+              </ion-button>
+          </ion-card-header>
+      </ion-card><!--closes product card-->
+  </ng-container><!--closes ngContainer-->
+
+  <ng-container *ngFor="let p of products | async"> <!--Code exactly the same for other 19 products' functionality and appearance, all that is different is the product id and image path -->
+      <ion-card *ngIf="p.id == 2">
+          <ion-card-header>
+              <img src="assets/img/duck.jpg" class="image">
+              <ion-card-title>{{p.name}}</ion-card-title>
+              <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+              <ion-button fill="clear" (click)="addToCart(p)">
+                  <ion-icon name="add"></ion-icon>
+              </ion-button>
+          </ion-card-header>
+      </ion-card>
+  </ng-container>
+
+  <ng-container *ngFor="let p of products | async">
+      <ion-card *ngIf="p.id == 3">
+          <ion-card-header>
+              <img src="assets/img/dimsum.jpg" class="image">
+              <ion-card-title>{{p.name}}</ion-card-title>
+              <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+              <ion-button fill="clear" (click)="addToCart(p)">
+                  <ion-icon name="add"></ion-icon>
+              </ion-button>
+          </ion-card-header>
+      </ion-card>
+  </ng-container>
+
+  <ng-container *ngFor="let p of products | async">
+      <ion-card *ngIf="p.id == 4">
+          <ion-card-header>
+              <img src="assets/img/prawn.jpg" class="image">
+              <ion-card-title>{{p.name}}</ion-card-title>
+              <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+              <ion-button fill="clear" (click)="addToCart(p)">
+                  <ion-icon name="add"></ion-icon>
+              </ion-button>
+          </ion-card-header>
+      </ion-card>
+  </ng-container>
+
+  <ng-container *ngFor="let p of products | async">
+      <ion-card *ngIf="p.id == 5">
+          <ion-card-header>
+              <img src="assets/img/mandu.jpg" class="image">
+              <ion-card-title>{{p.name}}</ion-card-title>
+              <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+              <ion-button fill="clear" (click)="addToCart(p)">
+                  <ion-icon name="add"></ion-icon>
+              </ion-button>
+          </ion-card-header>
+      </ion-card>
+  </ng-container>
+
+  <ng-container *ngFor="let p of products | async">
+      <ion-card *ngIf="p.id == 6">
+          <ion-card-header>
+              <img src="assets/img/coriander.jpg" class="image">
+              <ion-card-title>{{p.name}}</ion-card-title>
+              <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+              <ion-button fill="clear" (click)="addToCart(p)">
+                  <ion-icon name="add"></ion-icon>
+              </ion-button>
+          </ion-card-header>
+      </ion-card>
+  </ng-container>
+
+  <ng-container *ngFor="let p of products | async">
+      <ion-card *ngIf="p.id == 7">
+          <ion-card-header>
+              <img src="assets/img/dill.jpg" class="image">
+              <ion-card-title>{{p.name}}</ion-card-title>
+              <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+              <ion-button fill="clear" (click)="addToCart(p)">
+                  <ion-icon name="add"></ion-icon>
+              </ion-button>
+          </ion-card-header>
+      </ion-card>
+  </ng-container>
+
+  <ng-container *ngFor="let p of products | async">
+      <ion-card *ngIf="p.id == 8">
+          <ion-card-header>
+              <img src="assets/img/chive.jpg" class="image">
+              <ion-card-title>{{p.name}}</ion-card-title>
+              <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+              <ion-button fill="clear" (click)="addToCart(p)">
+                  <ion-icon name="add"></ion-icon>
+              </ion-button>
+          </ion-card-header>
+      </ion-card>
+  </ng-container>
+
+  <ng-container *ngFor="let p of products | async">
+    <ion-card *ngIf="p.id == 9">
+        <ion-card-header>
+            <img src="assets/img/hp.jpg" class="image">
+            <ion-card-title>{{p.name}}</ion-card-title>
+            <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+            <ion-button fill="clear" (click)="addToCart(p)">
+                <ion-icon name="add"></ion-icon>
+            </ion-button>
+        </ion-card-header>
+    </ion-card>
+</ng-container>
+
+<ng-container *ngFor="let p of products | async">
+    <ion-card *ngIf="p.id == 10">
+        <ion-card-header>
+            <img src="assets/img/teans.jpg" class="image">
+            <ion-card-title>{{p.name}}</ion-card-title>
+            <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+            <ion-button fill="clear" (click)="addToCart(p)">
+                <ion-icon name="add"></ion-icon>
+            </ion-button>
+        </ion-card-header>
+    </ion-card>
+</ng-container>
+
+<ng-container *ngFor="let p of products | async">
+    <ion-card *ngIf="p.id == 11">
+        <ion-card-header>
+            <img src="assets/img/mpg.jpg" class="image">
+            <ion-card-title>{{p.name}}</ion-card-title>
+            <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+            <ion-button fill="clear" (click)="addToCart(p)">
+                <ion-icon name="add"></ion-icon>
+            </ion-button>
+        </ion-card-header>
+    </ion-card>
+</ng-container>
+
+<ng-container *ngFor="let p of products | async">
+    <ion-card *ngIf="p.id == 12">
+        <ion-card-header>
+            <img src="assets/img/mpr.jpg" class="image">
+            <ion-card-title>{{p.name}}</ion-card-title>
+            <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+            <ion-button fill="clear" (click)="addToCart(p)">
+                <ion-icon name="add"></ion-icon>
+            </ion-button>
+        </ion-card-header>
+    </ion-card>
+</ng-container>
+
+<ng-container *ngFor="let p of products | async">
+    <ion-card *ngIf="p.id == 13">
+        <ion-card-header>
+            <img src="assets/img/tcp.jpg" class="image">
+            <ion-card-title>{{p.name}}</ion-card-title>
+            <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+            <ion-button fill="clear" (click)="addToCart(p)">
+                <ion-icon name="add"></ion-icon>
+            </ion-button>
+        </ion-card-header>
+    </ion-card>
+</ng-container>
+
+<ng-container *ngFor="let p of products | async">
+  <ion-card *ngIf="p.id == 14">
+      <ion-card-header>
+          <img src="assets/img/sri.jpg" class="image">
+          <ion-card-title>{{p.name}}</ion-card-title>
+          <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+          <ion-button fill="clear" (click)="addToCart(p)">
+              <ion-icon name="add"></ion-icon>
+          </ion-button>
+      </ion-card-header>
+  </ion-card>
+</ng-container>
+
+<ng-container *ngFor="let p of products | async">
+  <ion-card *ngIf="p.id == 15">
+      <ion-card-header>
+          <img src="assets/img/hoi.jpg" class="image">
+          <ion-card-title>{{p.name}}</ion-card-title>
+          <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+          <ion-button fill="clear" (click)="addToCart(p)">
+              <ion-icon name="add"></ion-icon>
+          </ion-button>
+      </ion-card-header>
+  </ion-card>
+</ng-container>
+
+<ng-container *ngFor="let p of products | async">
+  <ion-card *ngIf="p.id == 16">
+      <ion-card-header>
+          <img src="assets/img/jimmy.jpg" class="image">
+          <ion-card-title>{{p.name}}</ion-card-title>
+          <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+          <ion-button fill="clear" (click)="addToCart(p)">
+              <ion-icon name="add"></ion-icon>
+          </ion-button>
+      </ion-card-header>
+  </ion-card>
+</ng-container>
+
+<ng-container *ngFor="let p of products | async">
+  <ion-card *ngIf="p.id == 17">
+      <ion-card-header>
+          <img src="assets/img/plum.jpg" class="image">
+          <ion-card-title>{{p.name}}</ion-card-title>
+          <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+          <ion-button fill="clear" (click)="addToCart(p)">
+              <ion-icon name="add"></ion-icon>
+          </ion-button>
+      </ion-card-header>
+  </ion-card>
+</ng-container>
+
+<ng-container *ngFor="let p of products | async">
+  <ion-card *ngIf="p.id == 18">
+      <ion-card-header>
+          <img src="assets/img/coco.jpg" class="image">
+          <ion-card-title>{{p.name}}</ion-card-title>
+          <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+          <ion-button fill="clear" (click)="addToCart(p)">
+              <ion-icon name="add"></ion-icon>
+          </ion-button>
+      </ion-card-header>
+  </ion-card>
+</ng-container>
+
+<ng-container *ngFor="let p of products | async">
+  <ion-card *ngIf="p.id == 19">
+      <ion-card-header>
+          <img src="assets/img/thai.jpg" class="image">
+          <ion-card-title>{{p.name}}</ion-card-title>
+          <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+          <ion-button fill="clear" (click)="addToCart(p)">
+              <ion-icon name="add"></ion-icon>
+          </ion-button>
+      </ion-card-header>
+  </ion-card>
+</ng-container>
+
+<ng-container *ngFor="let p of products | async">
+  <ion-card *ngIf="p.id == 20">
+      <ion-card-header>
+          <img src="assets/img/soy.jpg" class="image">
+          <ion-card-title>{{p.name}}</ion-card-title>
+          <ion-card-subtitle>Price: £{{p.price}}</ion-card-subtitle>
+          <ion-button fill="clear" (click)="addToCart(p)">
+              <ion-icon name="add"></ion-icon>
+          </ion-button>
+      </ion-card-header>
+  </ion-card>
+</ng-container>
+
+
+
+</ion-content>

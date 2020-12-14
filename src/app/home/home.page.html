@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <img src="assets/img/dg.png" class="logo">
+  </ion-toolbar>
+</ion-header>  <!--Places the DG Asian Food Company Logo at the top of page. Sized and centered using logo tag in CSS-->
+
+<ion-content> <!--Start of content tag-->
+
+    <ion-card>
+        <ion-card-content>
+            <ion-row>
+              <ion-col col-4></ion-col>
+              <ion-col col-4>
+                <ion-button size ="small" color="light" shape="round" routerLink="/products">Products</ion-button>
+              </ion-col>
+              <ion-col col-4></ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card> <!--Products card on home page with button which directs to products page when clicked by user -->
+
+        <ion-card>
+          <ion-card-content>
+              <ion-row>
+                <ion-col col-4></ion-col>
+                <ion-col col-4>
+                  <ion-button size ="small" color="light" shape="round" routerLink="/recipes">Recipes</ion-button>
+                </ion-col>
+                <ion-col col-4></ion-col>
+              </ion-row>
+            </ion-card-content>
+        </ion-card> <!--Recipes card on home page with button which directs to recipes page when clicked by user -->
+
+      <ion-card> 
+        <ion-card-content>
+            <ion-row>
+              <ion-col col-4></ion-col>
+              <ion-col col-4>
+                  <ion-button size ="small" color="light" shape="round" routerLink="/about">About Us</ion-button>
+              </ion-col>
+              <ion-col col-4></ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card> <!--About Us card on home page with button which directs to About Us page when clicked by user -->
+
+
+      <ion-card>
+        <ion-card-content>
+            <ion-row>
+              <ion-col col-4></ion-col>
+              <ion-col col-4>
+                <ion-button size ="small" color="light" shape="round" routerLink="/registered">My Account</ion-button>
+              </ion-col>
+              <ion-col col-4></ion-col>
+            </ion-row>
+          </ion-card-content>
+      </ion-card> <!--My Account card on home page with button which directs to My Account page when clicked by user -->
+
+      <ion-card>
+        <ion-card-content *ngIf="loggedIn"> <!-- Conditional directive. Shopping List card and button will only appear when user is logged in -->
+            <ion-row>
+              <ion-col col-4></ion-col>
+              <ion-col col-4>
+                <ion-button size ="small" color="light" shape="round" routerLink="/list">Shopping List</ion-button>
+              </ion-col>
+              <ion-col col-4></ion-col>
+            </ion-row>
+          </ion-card-content>
+      </ion-card> <!--Shopping List card with button on home page displayed when user is logged in, directs to Shopping List page when clicked by user -->
+
+      <ion-card>
+        <ion-card-content *ngIf="loggedIn"> <!-- Conditional directive. Sign Out card and button will only appear when user is logged in -->
+            <ion-row>
+              <ion-col col-4></ion-col>
+              <ion-col col-4>
+                <ion-button size ="small" color="danger" shape="round" fill="outline" (click)="logout();">Sign Out</ion-button>
+                <p></p>
+                {{loggedIn}} is logged in <!-- Shows the current user that is logged underneath sign out button. See typsecript file for loggedIn variable declaration-->
+              </ion-col>
+              <ion-col col-4></ion-col>
+            </ion-row>
+          </ion-card-content>
+      </ion-card> <!--Sign Out card with button on home page displayed when user is logged in, signs user out of application clicked by user -->
+
+      
+
+
+  
+</ion-content>
+

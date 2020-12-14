@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-toolbar>
+        <img src="assets/img/dg.png" class="logo"> <!--Places the DG Asian Food Company Logo at the top of page. Sized and centered using logo tag in CSS-->
+        <ion-title>Cart</ion-title> <!--Page Title-->
+    </ion-toolbar>
+</ion-header>
+
+<ion-content> <!--Starts content tag-->
+
+    <div class="ion-text-end">
+        <ion-button (click)="close()" fill="clear" color="danger"> <!--Close method initialised on click-->
+          <ion-icon name="close" slot="start"></ion-icon> <!--Close icon-->
+        </ion-button>
+      </div>
+
+    <div class="ion-padding">
+ 
+        <ion-list>
+          <ion-item *ngFor="let p of cart" class="ion-text-wrap"> <!--ngFor directive subscribes to products in cart-->
+            <ion-grid>
+              <ion-row class="ion-align-items-center"> <!--centers row-->
+                <ion-col size="2" class="ion-align-self-center">
+                    <ion-button *ngIf="cart.length > 0" fill="clear" (click)="remove(p)"> <!--ngIf directive remove icon only displayed if cart total greater than 1. remove method initialised on click -->
+                        <ion-icon name="remove"></ion-icon> <!--remove icon. User can remove 1 product to cart at a time-->
+                    </ion-button>
+                </ion-col>
+                <ion-col size="1" class="ion-align-self-center">
+                  {{ p.amount }} <!--passes product amount to the cart modal from Firestore-->
+                </ion-col>
+                <ion-col size="2" class="ion-align-self-center">
+                    <ion-button fill="clear" (click)="addToCart(p)"> <!--add to cart method initialised on click-->
+                        <ion-icon name="add"></ion-icon> <!--add icon. User can add 1 product to cart at a time-->
+                    </ion-button>
+                </ion-col>
+                <ion-col size="2" offset="5">
+                  <ion-button *ngIf="cart.length > 0" fill="clear" (click)="empty(p); cartEmpty()"> <!--ngIf directive trash icon only displayed if cart total greater than 1. empty method and cart empty alert method initialised on click -->
+                    <ion-icon name="trash"></ion-icon> <!--Trash icon-->
+                </ion-button>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="9">
+                  <b>{{ p.name }}</b> <!--passes product name to the cart modal from Firestore-->
+                </ion-col>
+                <ion-col size="3" class="ion-text-end">
+                  {{ p.amount * p.price | currency:'GBP' }} <!--passes product amount multiplied by price. Uses £ currency pipe to the cart modal from Firestore-->
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+          <ion-item>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="9">
+                  Total: 
+                </ion-col>
+                <ion-col size="3" class="ion-text-end">
+                  {{ getTotal() | currency:'GBP' }} <!--getTotal method initialised to display cart total. Uses the £ currency pipe-->
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="block" *ngIf="userEmail" (click)="checkout()"> <!--ngIf directive checkout button only displayed if user logged in. checkout method initialised on click -->
+          Checkout
+        </ion-button>
+        <ion-button expand="block" *ngIf="!userEmail" size ="small" color="light" (click)="login()"> <!--ngIf directive checkout button only displayed if user not logged in. cart modal closed on click -->
+          Please log in to checkout
+        </ion-button>
+      </div>
+
+
+</ion-content> <!--Ends content tag-->

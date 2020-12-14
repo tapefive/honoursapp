@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+    <img src="assets/img/dg.png" class="logo">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header> <!--Places the DG Asian Food Company Logo at the top of page. Sized and centered using logo tag in CSS-->
+
+<ion-content padding> <!--Starts content tag with padding-->
+  <form class="form" [formGroup]="validations_form"  (ngSubmit)="loginUser(validations_form.value)">  <!--handles form input validation and initialises loginUser method from login.page.ts-->
+ 
+    <ion-item>
+      <ion-label  position="floating" color="medium">Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item> <!--email address form input field. Initialised and validated from ngOnInit method in login.page.ts file-->
+
+  
+    <ion-item>
+      <div class="item-content">
+      <ion-label  position="floating" color="medium">Password</ion-label>
+      <ion-input type="password" formControlName="password" class="form-control" required></ion-input>
+      </div>
+    </ion-item> <!--password form input field. Initialised and validated from ngOnInit method in login.page.ts file-->
+    
+    <ion-button  class="submit-btn" type="submit" shape="round"  [disabled]="!validations_form.valid">Sign In</ion-button>
+
+    <!--Sign in button. Disabled until both email and password fields have been filled-->
+ 
+    <label class="error-message">{{errorMessage}}</label> <!--displays the appropriate error message to user-->
+  </form>
+<div class="buttons"> <!--Declared buttons div tag for CSS-->
+  <p class="go-to-register">
+    No account yet? <ion-button size ="small" color="light" shape="round" (click)="goToRegisterPage()">Create an account</ion-button> 
+  </p>
+  <!--Create an account button passes user to register page by initialising goToRegisterPage method-->
+  <p><ion-button size ="small" color="light" shape="round" routerLink="/home">Home</ion-button> <!--Home button passes user back to home page-->
+  </p>
+</div>
+
+  
+</ion-content> <!--Ends content tag-->
+

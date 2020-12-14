@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\resources",
+    "\\resources\\android",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\products",
+    "\\src\\app\\products\\pastes",
+    "\\src\\app\\products\\sauces",
+    "\\src\\app\\products\\wonton",
+    "\\src\\app\\services"
+  ],
+  "SelectedNode": "\\src\\app\\products\\sauces\\sauces.page.scss",
+  "PreviewInSolutionExplorer": false
+}

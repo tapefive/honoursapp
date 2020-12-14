@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-toolbar>
+    <img src="assets/img/dg.png" class="logo">
+    <ion-title>About Us</ion-title> <!--Page title-->
+  </ion-toolbar>
+</ion-header>
+<!--Places the DG Asian Food Company Logo at the top of page. Sized and centered using logo tag in CSS-->
+<ion-buttons slot="start">
+  <ion-back-button color="danger" text= "Home" defaultHref="/home"></ion-back-button>
+</ion-buttons> <!--Back button passes user back to Home page-->
+
+<ion-content> <!--Start of content tag-->
+
+    <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle></ion-card-subtitle>
+          <ion-card-title>Who We Are</ion-card-title> <!--Who We Are card title-->
+        </ion-card-header>
+      
+        <ion-card-content>
+          The Dumfries & Galloway Asian Food Company was established in September 2019 with the aim of providing Asian food products and ingredients to local residents and International students
+          studying in the area via an easy to use mobile application.
+          <p></p>
+          As well as products and ingredients, the application also provides users with a variety of simple <a routerLink="/recipes">recipes</a> to inspire and help people broaden their culinary horizons with the products and ingredients we sell.
+        </ion-card-content>
+      </ion-card> <!--Who We Are card content-->
+
+      <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle></ion-card-subtitle>
+            <ion-card-title>What We Sell</ion-card-title> <!--What We Sell card title-->
+          </ion-card-header>
+        
+          <ion-card-content>
+            A survey was conducted before the application was developed to establish what kind of products potential users would like to see sold within the application. 
+            <p></p>
+            <img src="assets/img/chart.PNG" class="survey">
+            As you can see from the chart above, the survey results show that Sauces was the most popular choice. The types of sauces we sell include a variety of Chilli, Hoisin, Soy, Plum, Teriyake and Satay sauces.
+            <p></p>
+            The second most popular choice was Won Ton & Dumplings. We sell a variety of flavours including Pork & Chive, Prawn, Chicken and Vegetable frozen dumplings. We also sell dumpling wrappers for people who want to make their own at home.
+            <p></p>
+            Please refer to our <a routerLink="/products">products</a> section to find out more about the Chinese, Thai, Vietnamese, Indian and Malayasian products we sell at the Dumfries and Galloway Asain Food Company.
+          </ion-card-content>
+        </ion-card> <!--What We Sell card content-->
+
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle></ion-card-subtitle>
+            <ion-card-title>Privacy Policy</ion-card-title> <!--Privacy Policy card title-->
+          </ion-card-header>
+        
+          <ion-card-content>
+            Sum Boy Development built the Dumfries & Galloway Asian Food Company prototype as a free app. 
+            <p></p>
+            This service is provided by Sum Boy Development at no cost and is intended for use as is.
+            <p></p>
+            This section is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my service.
+            <p></p>
+            <p></p>
+            <p></p>
+            <b>This app only asks users to provide an email address and password to test the login authentication and account registration features which are stored on a secure Firebase console.</b>
+            <p></p>
+            I may update the Privacy Policy from time to time. Thus, you are advised to review this section periodically for any changes.
+            <p></p>
+            If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me.
+          </ion-card-content>
+        </ion-card>
+        <!--Privacy Policy card content-->
+
+</ion-content> <!--End of content tag-->

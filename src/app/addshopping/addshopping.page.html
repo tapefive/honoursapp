@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+  <img src="assets/img/dg.png" class="logo">
+  <ion-title>Add Shopping</ion-title>
+</ion-toolbar>
+</ion-header>
+<!--Places the DG Asian Food Company Logo at the top of page. Sized and centered using logo tag in CSS-->
+<ion-buttons slot="start">
+<ion-back-button color="danger" defaultHref="/list"></ion-back-button>
+</ion-buttons>
+<!--Back button takes user back to list page when clicked -->
+
+<ion-content> <!--Start of content tag-->
+
+   <ion-item>
+      <ion-label position="floating" >Item Name:</ion-label> <!--Label for item name-->
+      <ion-input type="text" autocapitalize="words" [(ngModel)]="shoppingItem.itemName"></ion-input> <!--Creates a Text FormControl instance from shopping item model and binds it to shopping item name-->
+   </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Quantity:</ion-label> <!--Label for item quantity-->
+      <ion-input type="number" [(ngModel)]="shoppingItem.itemNumber"></ion-input> <!--Creates a Number FormControl instance from shopping item model and binds it to shopping item quantity-->
+    </ion-item>
+  
+  <div class="buttons">
+    <ion-button *ngIf="shoppingItem.itemName && shoppingItem.itemNumber "color="primary" shape="round"  (click)="addShoppingItem(shoppingItem);" routerLink="/list" routerDirection="backward">Add Item</ion-button>
+  </div>
+  <!--Add item button only shown if both fields have data. addShoppingItem method initialised on click. User passed back to shopping list page when item added to list-->
+
+</ion-content> <!--End of content tag-->

@@ -1,0 +1,34 @@
+.logo {
+    height: 175px;
+    width: 175px;
+    position: relative;
+} // sets logo size and position on screen
+
+ion-toolbar {
+    text-align: center;
+} // centers toolbar on screen
+
+ion-card {
+    position: relative;
+    text-align: center;
+} // centers cards for buttons on screen
+
+.image {
+
+    height: 175px;
+    width: 175px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+} // sets product image size and sets position as centered
+
+ion-fab-button {
+    height: 70px;
+    width: 70px;
+} // sets size of cart button
+
+
+.cart-icon {
+    font-size: 50px;
+} //sets size of font within cart
